@@ -7,3 +7,9 @@ var port = process.env.PORT || 3000;
 app.set('view engine','ejs');
 app.use(express.static(_dirname +'/public'));
 
+
+
+
+http.createServer(app).listen(port, function(){
+
+});
