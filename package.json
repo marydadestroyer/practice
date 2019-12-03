@@ -1,8 +1,9 @@
-{
+npm{
   "name": "practice",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "start":"node.app.js",
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
