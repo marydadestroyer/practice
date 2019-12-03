@@ -1,11 +1,21 @@
-var express = require('express');
-var ejs = require('ejs');
-var fetch = require('node-fetch');
+var http = require('http');
+var path = require('path');
+const express = require("express");
+var bodyParser = require("body-parser");
+const app = express();
+const port = process.env.PORT || 3000;
 
-var app = express();
-var port = process.env.PORT || 3000;
-app.set('view engine','ejs');
-app.use(express.static(_dirname +'/public'));
+app.set('views', path.join(__dirname, 'views'));
+app.set("view engine", "ejs");
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({ encoded: true}));
+var task = ["clean", "cook"];
+var complete = ["eat", "sleep"];
+
+
+app.get('/', function(req, res){
+    res.render('index',{task:task, complete:complete});
+});
 
 
 
